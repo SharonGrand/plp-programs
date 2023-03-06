@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>My PORTFOLIO</title>
+        <style>
+            {
+                margin:0;
+                padding: 0;
+
+            }
+            body{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.5;
+            }
+            header{
+                padding: 30px 20px;
+                background: #aaa;
+                position: sticky;
+                top: 0;
+                width: 100%;
+                z-index: 1111;
+            }
+            .main-head{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            ul{
+                display: flex;
+                list-style: none;
+            }
+            nav li{
+                padding: 5px 10px;
+                border: none;
+                display: inline-block;
+                padding: 5px;
+                transition: all linear o.5s;
+                margin-right: 20px;
+            }
+            nav li a{
+                text-decoration: none;
+                color: #000;
+                font-weight: 500;
+                padding: 5px;
+            }
+            section{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                width: 100%;
+            }
+        
+            section h1{
+                font-size: 2rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                opacity: 0.8;
+                color: #fff;
+                text-shadow: 5px 10px 5px rgba(0, 0, 0, 0.5);
+            }
+            #home{
+                   background: purple;
+            }
+            #about{
+                background: green;
+            }
+            #resume{
+                background: yellowgreen;
+            }
+            #works{
+                background: pink;
+            }
+            #contacts{
+                background: goldenrod;
+            }
+            .active{
+                background: orangered;
+                display: inline-block;
+                padding: 5px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="main-head">
+                    <h2>sharon wamalwa</h2>
+                    <nav class="nav">
+                        <ul>
+                            <li class="links"><a href="home">HOME</a></li>
+                            <li class="links"><a href="about">ABOUT</a></li>
+                            <li class="links"><a href="resume">RESUME</a></li>
+                            <li class="links"><a href="works">WORKS</a></li>
+                            <li class="links"><a href="contacts">CONTACTS</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <section id="home">
+            <h1>HOME</h1>
+            <p style="text-align: start;">
+                <b> Hello my name is Sharon Wamalwa<br> A web developer <br> from kenya</b>
+                <img src="me.jpg" style="width:400px;height:500px;text-align:right">
+            </p>
+        </section>
+        <section id="about">
+            <h1>ABOUT</h1>
+            <p>
+              <b>WEB DEVELOPER<br> love codding<br> developing websites is my hobby</b> 
+            </p>
+        </section>
+        <section id="resume">
+            <h1>RESUME</h1>
+            <p>
+                <b> went to asumbi girls<br>currently at moi university</b>
+            </p>
+        </section>
+        <section id="works">
+            <h1>WORKS</h1>
+            <p>
+                <b> you can find my works through contacting me or from the github account</b>
+            </p>
+        </section>
+        <section id="contacts">
+            <h1>CONTACTS</h1>
+            <p>
+                <b>email<br>sharongrand98@gmail.com<br>whatsapp<br>0791677004<br>call<br>0791613040</b>
+            </p>
+        </section>
+        <script>
+            const li=document.querySelectorAll(".links");
+            const sec=document.querySelectorAll("section");
+            
+            function activeMenu(){
+                let len=sec.length;
+                while(-- len && window.scrollY + 97 < sec[len].offsetTop ){}
+                li.forEach(ltx => ltx.classList.remove("active"));
+                li[len].classList.add("active");
+            }
+            activeMenu();
+            window.addEventListener("scroll",activeMenu);
+        </script>
+    </body>
+</html>
